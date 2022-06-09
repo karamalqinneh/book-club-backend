@@ -23,6 +23,40 @@ module.exports = {
       publish_date: {
         type: Sequelize.DATE,
       },
+      suggestion: {
+        type: Sequelize.BOOLEAN,
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+    });
+    await queryInterface.createTable("books", {
+      book_id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      introduction: {
+        type: Sequelize.STRING,
+      },
+      name: {
+        type: Sequelize.STRING,
+      },
+      img_url: {
+        type: Sequelize.STRING,
+      },
+      book_url: {
+        type: Sequelize.STRING,
+      },
+      publish_date: {
+        type: Sequelize.DATE,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

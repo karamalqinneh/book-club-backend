@@ -8,6 +8,7 @@ const cors = require("cors");
 // Routes & Dependencies
 const authRoutes = require("./routes/auth-routes/index");
 const readingListRoutes = require("./routes/readingList-routes/index");
+const libraryRoutes = require("./routes/library-routes/index");
 const errorHandler = require("./middlewares/error-handlers/500");
 const notFoundHandler = require("./middlewares/error-handlers/404");
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 app.use(authRoutes);
 app.use(readingListRoutes);
+app.use(libraryRoutes);
 
 // Error Handlers
 

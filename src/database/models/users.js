@@ -37,13 +37,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.VIRTUAL,
         get() {
           const acl = {
-            fan: ["view", "join", "reading-list", "suggest"],
+            fan: ["view", "join", "reading-list", "suggest", "library"],
             admin: [
               "view",
               "join",
               "reading-list",
               "suggest",
               "library",
+              "edit-library",
               "discussion",
               "readings",
             ],
