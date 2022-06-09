@@ -1,6 +1,6 @@
 const users = [];
 
-// join user to community chat
+// join user to the room
 function userJoin(id, username, roomID) {
   const user = { id, username, roomID };
   // push user to users array
@@ -13,8 +13,7 @@ function getCurrentUser(id) {
   return users.find((user) => user.id === id);
 }
 
-// user leve community chat using his id
-function leveRoom(id) {
+function leaveRoom(id) {
   const data = users.findIndex((user) => user.id === id);
 
   if (data !== -1) {
@@ -22,7 +21,7 @@ function leveRoom(id) {
   }
 }
 
-// get user community
+// get user room
 function getUserRoom(room) {
   return users.filter((user) => user.roomID === room);
 }
@@ -30,6 +29,6 @@ function getUserRoom(room) {
 module.exports = {
   userJoin,
   getCurrentUser,
-  leveRoom,
+  leaveRoom,
   getUserRoom,
 };
