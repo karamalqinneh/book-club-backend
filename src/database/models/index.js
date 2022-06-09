@@ -49,6 +49,10 @@ Object.keys(db).forEach((modelName) => {
   }
 });
 
+// reading list relations
+db.reading_list.hasOne(db.books, { foreignKey: "book_id" });
+db.books.belongsTo(db.reading_list, { foreignKey: "book_id" });
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

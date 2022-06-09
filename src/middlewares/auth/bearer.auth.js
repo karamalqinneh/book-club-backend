@@ -9,7 +9,7 @@ const bearerAuth = async (req, res, next) => {
       let bearerHeaderParts = req.headers.authorization.split(" ");
       let token = bearerHeaderParts.pop();
       try {
-        let user = await database.emplpyees.authenticateBearer(token);
+        let user = await database.users.authenticateBearer(token);
         if (user) {
           req.user = user;
           next();
