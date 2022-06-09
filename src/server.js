@@ -2,13 +2,21 @@
 
 // Server Setup
 const express = require("express");
-const app = express();
 const cors = require("cors");
+const http = require("http");
+const app = express();
+const server = http.Server(app);
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "*",
+  },
+});
 
 // Routes & Dependencies
 const authRoutes = require("./routes/auth-routes/index");
 const readingListRoutes = require("./routes/readingList-routes/index");
 const libraryRoutes = require("./routes/library-routes/index");
+require("./discussion-app/main.app")(io);
 const errorHandler = require("./middlewares/error-handlers/500");
 const notFoundHandler = require("./middlewares/error-handlers/404");
 
