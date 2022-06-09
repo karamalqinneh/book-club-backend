@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      status: {
+      genre: {
         type: DataTypes.ENUM(
           "Self-help",
           "Cookbooks",
@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       introduction: DataTypes.STRING,
       name: DataTypes.STRING,
+      suggestion: DataTypes.BOOLEAN,
       img_url: DataTypes.STRING,
       book_url: DataTypes.STRING,
       publish_date: DataTypes.DATE,
