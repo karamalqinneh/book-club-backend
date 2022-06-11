@@ -1,8 +1,8 @@
 const users = [];
 
-// join user to the room
-function userJoin(id, username, roomID) {
-  const user = { id, username, roomID };
+// join user to community chat
+function userJoin(id, username, community_id) {
+  const user = { id, username, community_id };
   // push user to users array
   users.push(user);
   return user;
@@ -13,7 +13,8 @@ function getCurrentUser(id) {
   return users.find((user) => user.id === id);
 }
 
-function leaveRoom(id) {
+// user leve community chat using his id
+function leveCommunity(id) {
   const data = users.findIndex((user) => user.id === id);
 
   if (data !== -1) {
@@ -21,14 +22,14 @@ function leaveRoom(id) {
   }
 }
 
-// get user room
-function getUserRoom(room) {
-  return users.filter((user) => user.roomID === room);
+// get user community
+function getUserCommunity(community) {
+  return users.filter((user) => user.community === community);
 }
 
 module.exports = {
   userJoin,
   getCurrentUser,
-  leaveRoom,
-  getUserRoom,
+  leveCommunity,
+  getUserCommunity,
 };

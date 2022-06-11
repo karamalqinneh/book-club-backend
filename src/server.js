@@ -39,7 +39,7 @@ app.use(errorHandler);
 
 // connect to sequelize & listen for requests
 const start = (port) => {
-  app.listen(port, () => console.log(`Running on Port ${port}`));
+  server.listen(port, () => console.log(`Running on Port ${port}`));
 };
 
 module.exports = {
