@@ -16,6 +16,7 @@ const io = require("socket.io")(server, {
 const authRoutes = require("./routes/auth-routes/index");
 const readingListRoutes = require("./routes/readingList-routes/index");
 const libraryRoutes = require("./routes/library-routes/index");
+const roomRoutes = require("./routes/room-routes/index");
 require("./discussion-app/main.app")(io);
 const errorHandler = require("./middlewares/error-handlers/500");
 const notFoundHandler = require("./middlewares/error-handlers/404");
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 app.use(authRoutes);
 app.use(readingListRoutes);
 app.use(libraryRoutes);
+app.use(roomRoutes);
 
 // Error Handlers
 
